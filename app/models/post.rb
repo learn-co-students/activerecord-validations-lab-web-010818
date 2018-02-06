@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
   validates :category, inclusion: {in: %w(Fiction Non-Fiction)}
   validate :is_clickbait?
 
+  # Ruby shorthand: %w(Fiction Non-Fiction) => ["Fiction", "Non-Fiction"]
+
   @@clickbaits = [
     "Won't Believe",
     "Secret",
